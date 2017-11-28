@@ -55,12 +55,18 @@ namespace DomainEventConsoleApp
         {
             Console.WriteLine("Appointment::Create()");
             var appointment = new Appointment {EmailAddress = emailAddress};
+            ConsoleWriter.FromEmailEventHandlers("[EMAIL] Notification email sent to {0}", appointment.EmailAddress);
+            ConsoleWriter.FromUIEventHandlers("[UI] User Interface informed appointment created for {0}", appointment.EmailAddress);
             return appointment;
         }
 
         public void Confirm(DateTime dateConfirmed)
         {
             ConfirmationReceivedDate = dateConfirmed;
+            ConsoleWriter.FromUIEventHandlers("[UI] User Interface informed appointment for {0} confirmed at {1}",
+                EmailAddress,
+                ConfirmationReceivedDate.ToString());
+            
         }
 
         public string EmailAddress { get; set; }
