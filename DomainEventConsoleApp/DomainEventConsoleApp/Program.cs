@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using Autofac;
-using Autofac.Core;
 
 namespace DomainEventConsoleApp
 {
@@ -11,55 +9,6 @@ namespace DomainEventConsoleApp
 
         private static void Main()
         {
-            //var container = IoC.LetThereBeIoC();
-
-
-            //var builder = new ContainerBuilder();
-            //var asm = Assembly.GetExecutingAssembly();
-            //var handlerType = typeof(IHandleDomainEvents<>);
-
-            //builder.RegisterAssemblyTypes(asm)
-            //    .AsClosedTypesOf(handlerType)
-            //    .InstancePerLifetimeScope();
-
-            //builder.RegisterType<EventDispatcher>()
-            //    .As<IEventDispatcher>()
-            //    .InstancePerLifetimeScope();           
-
-
-            //var builder = new ContainerBuilder();
-
-
-            //Func<Type, bool> predicate = n => n.GetGenericTypeDefinition() == typeof(IEventHandles<>);
-
-            //var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            //var classes = assemblies
-            //    .SelectMany(n => n.GetTypes())
-            //    .ToArray();
-
-            //var handlerClasses = classes
-            //    .Where(n =>
-            //        n.GetInterfaces()
-            //            .Where(i => i.IsGenericType)
-            //            .Any(predicate))
-            //    .Select(n => new
-            //    {
-            //        Type = n,
-            //        HandlerTypes = n.GetInterfaces().Where(i => i.IsGenericType).Where(predicate).ToArray()
-            //    })
-            //    .ToArray();
-
-            //foreach (var handlerClass in handlerClasses)
-            //{
-            //    foreach (var handler in handlerClass.HandlerTypes)
-            //    {
-            //        var hc = handlerClass;
-            //        builder.Register(c => c.Resolve(hc.Type)).As(handler);
-            //    }
-            //}
-
-            //Container = builder.Build();
-
             Console.WriteLine("Starting application.");
 
             var service = new AppointmentSchedulingService();
@@ -72,7 +21,6 @@ namespace DomainEventConsoleApp
 
             Console.WriteLine("Application done.");
             Console.ReadLine();
-
         }
     }
 }
