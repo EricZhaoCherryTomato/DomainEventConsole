@@ -63,7 +63,7 @@
     <Compile Include="IEventHandles.cs" />
     <Compile Include="IoC.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="JobNoteCreated.cs" />
+    <Compile Include="AppointmentCreatedEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />

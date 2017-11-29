@@ -6,12 +6,12 @@ namespace DomainEventConsoleApp
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<JobNoteCreated>()
+            builder.RegisterType<AppointmentCreatedEvent>()
                 .As<IEvent>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<AppointmentHanlder>()
-                .As<IEventHandles<JobNoteCreated>>()
+                .As<IEventHandles<AppointmentCreatedEvent>>()
                 .InstancePerLifetimeScope();
         }
     }

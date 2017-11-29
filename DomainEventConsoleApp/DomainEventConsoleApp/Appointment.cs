@@ -23,7 +23,7 @@ namespace DomainEventConsoleApp
         {
             Console.WriteLine("Appointment::Create()");
             var appointment = new Appointment {EmailAddress = emailAddress};
-            DomainEvent.Raise(new JobNoteCreated());
+            DomainEvent.Raise(new AppointmentCreatedEvent());
             return appointment;
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace DomainEventConsoleApp
 {
-    public class JobNoteCreated : IEvent
+    public class AppointmentCreatedEvent : IEvent
     {
     }
 }
